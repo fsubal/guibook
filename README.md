@@ -2,6 +2,8 @@
 
 『入門 GUI（以下、GUI 本）』の第 2 章のサンプルコードです
 
+![demo](docs/demo.gif)
+
 ### 必要なもの
 
 - yarn
