@@ -1,11 +1,9 @@
-import React, { useReducer, useRef, useCallback } from "react";
+import React, { useReducer, useCallback } from "react";
 import reducer, { initialState, LayerAction } from "../domains/Layer/reducer";
 import { RectLayer } from "./RectLayer";
 import CanvasContext from "./context";
 
 export function Canvas() {
-  const root = useRef<SVGSVGElement>(null);
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onDragStart = useCallback((x: Pixel, y: Pixel, e: Event) => {
@@ -26,8 +24,6 @@ export function Canvas() {
   return (
     <CanvasContext.Provider value={[state, dispatch]}>
       <svg
-        ref={root}
-        id="canvas"
         viewBox="0 0 500 500"
         width="500"
         height="500"
